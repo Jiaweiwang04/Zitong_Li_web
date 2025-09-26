@@ -8,7 +8,7 @@ body {
 }
 
 header {
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  background: linear-gradient(135deg, #3d68ad, #c2e9fb);
   color: white;
   padding: 40px 20px;
 }
@@ -26,16 +26,16 @@ h1 {
   display: inline-block;
   margin: 10px;
   padding: 15px 30px;
-  background: #ffb6c1;
+  background: #649de7;
   color: white;
   text-decoration: none;
   border-radius: 10px;
-  font-size: 1.2em;
+  font-size: 1.6em;
   transition: background 0.3s;
 }
 
 .year-btn:hover {
-  background: #ff69b4;
+  background: #649de7;
 }
 
 .gallery {
@@ -61,3 +61,159 @@ h1 {
   font-size: 0.9em;
   color: #555;
 }
+
+/* 多张照片主题 */
+.memory-group {
+  margin: 20px;
+  max-width: 520px;
+  text-align: center;
+}
+
+.memory-group .images {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.memory-group img {
+  width: 240px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.memory-group img:hover {
+  transform: scale(1.05);
+}
+
+.memory-group p {
+  margin-top: 12px;
+  font-size: 1.2em;   
+  line-height: 1.6;   
+  color: #333;        
+  font-weight: 500; 
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px;
+}
+
+.photo {
+  margin: 15px;
+  max-width: 250px;
+  text-align: center;
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.photo img:hover {
+  transform: scale(1.05);
+}
+
+.photo p {
+  margin-top: 12px;
+  font-size: 1.2em;   
+  line-height: 1.6;   
+  color: #333;        
+  font-weight: 500;  
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 450px; /* 调整宽度 */
+  margin: auto;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* 按钮样式：高度自动对齐图片中部 */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%; /* 永远居中 */
+  transform: translateY(-50%);
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  border-radius: 50%;
+  user-select: none;
+  background-color: rgba(0,0,0,0.3);
+  text-decoration: none;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.6);
+}
+
+/* 放大后的照片 */
+img.enlarged {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 60vw;   /* 最大宽度：屏幕宽度的 90% */
+  max-height: 60vh;  /* 最大高度：屏幕高度的 90% */
+  height: auto;      /* 高度自动，保持比例 */
+  width: auto;       /* 宽度自动，保持比例 */
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  border-radius: 10px;
+  cursor: zoom-out; /* 鼠标提示缩小 */
+  object-fit: contain; /* 确保图片完整显示 */
+}
+
+/* 背景遮罩 */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 999;
+  display: none;
+}
+
+.bio {
+  max-width: 800px;   /* 让文字区块更宽松 */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.bio h2 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+}
+
+.bio p {
+  font-size: 1.3em;
+  line-height: 1.8;
+}
+
+
